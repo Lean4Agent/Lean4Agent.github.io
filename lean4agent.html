@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lean4Agent uses Lean4 to model and verify agent workflows and execution trajectories. FormalAgentLib provides three verification layers; LeanEvolve uses their diagnostics to refine workflows.">
+  <meta name="keywords" content="Lean4Agent, Lean4, FormalAgentLib, LeanEvolve, agent workflows, formal verification, execution trajectories">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory">
+  <meta property="og:description" content="Three layers of workflow and trajectory verification, with formal guidance for workflow refinement. Evaluated across five LLMs on software engineering and AI paper understanding.">
+  <meta property="og:url" content="https://lean4agent.github.io/lean4agent.html">
+  <meta property="og:image" content="https://lean4agent.github.io/static/images/lean4agent/MainResults.png">
+  <meta property="og:image:alt" content="Verification-passing and verification-failing workflow results on SWE-Bench-Verified and ELAIP-Bench subsets.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lean4Agent">
+  <meta name="twitter:description" content="Formal Modeling and Verification for Agent Workflow and Trajectory.">
+  <meta name="twitter:image" content="https://lean4agent.github.io/static/images/lean4agent/MainResults.png">
+  <link rel="canonical" href="https://lean4agent.github.io/lean4agent.html">
+  <title>Lean4Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700%7CNoto+Sans:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#abstract">Skip to content</a>
+  <nav class="project-switcher" aria-label="Research projects">
+    <div class="project-switcher-links">
+      <a class="project-switcher-link" href="index.html">Lean4AgenticRL</a>
+      <a class="project-switcher-link" href="lean4agent.html" aria-current="page">Lean4Agent</a>
+    </div>
+  </nav>
+  <header class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory</h1>
+        <div class="publication-authors is-size-5">
+          <span class="author-block"><a href="https://rickyskywalker.github.io/" target="_blank" rel="noopener noreferrer">Ruida Wang</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://jh603.github.io/" target="_blank" rel="noopener noreferrer">Jerry Huang</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://pchengwang.github.io/" target="_blank" rel="noopener noreferrer">Pengcheng Wang</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://xuanqing94.github.io/" target="_blank" rel="noopener noreferrer">Xuanqing Liu</a><sup>2</sup>,</span>
+          <span class="author-block"><a href="https://www.amazon.science/author/chris-luyang-kong" target="_blank" rel="noopener noreferrer">Luyang Kong</a><sup>2</sup>,</span>
+          <span class="author-block"><a href="https://www.tongzhang-ml.org/" target="_blank" rel="noopener noreferrer">Tong Zhang</a><sup>1</sup></span>
+        </div>
+        <div class="publication-affiliations is-size-5">
+          <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
+          <span class="author-block"><sup>2</sup>Independent researcher</span>
+        </div>
+        <p class="publication-venue">Nips 2026</p>
+        <div class="publication-links">
+          <a href="static/pdfs/lean4agent.pdf" target="_blank" rel="noopener" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></span>
+            <span>Paper</span>
+          </a>
+          <a href="https://github.com/RickySkywalker/Lean4Agent" target="_blank" rel="noopener" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></svg></span>
+            <span>Code</span>
+          </a>
+          <a href="https://arxiv.org/abs/2606.06523" target="_blank" rel="noopener" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3h7v7M21 3l-11 11M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg></span>
+            <span>arXiv</span>
+          </a>
+          <a href="#main-results" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3v18h17M9 17v-6m5 6V6m5 11V9"/></svg></span>
+            <span>Results</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero teaser" aria-label="Results overview">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <figure>
+            <a class="figure-link" href="static/images/lean4agent/MainResults.svg" target="_blank" rel="noopener" aria-label="Open the workflow verification results chart at full size">
+              <img src="static/images/lean4agent/MainResults.svg" width="1800" height="690" fetchpriority="high" alt="Verification-passing workflows outperform verification-failing workflows for all five models on both the 50-problem SWE-Bench-Verified hard subset and the 100-question ELAIP-Bench subset. Exact scores appear in the main results table.">
+            </a>
+            <figcaption><strong>Fig. 1.</strong> Verification-passing workflows achieve higher task success across five LLMs on both evaluation subsets. SWE-Bench-Verified gains average <strong>14.80%</strong>.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract" aria-labelledby="abstract-title">
+      <div class="container is-max-desktop">
+        <div class="prose-column">
+          <h2 class="title is-3 has-text-centered" id="abstract-title">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Reliable agents need workflows that can be verified before execution and diagnosed when they fail. We introduce <strong>Lean4Agent</strong>, a framework that uses Lean4 to formally model and verify agent workflows and execution trajectories. Its <strong>FormalAgentLib</strong> provides a solid foundation for verifying workflow structure, semantic consistency, and runtime behavior. Building on the verification results, <strong>LeanEvolve</strong> revises workflows to address localized failures. Across five leading models, verification-passing workflows outperform failing ones on software engineering and AI paper understanding tasks. On the SWE-Bench-Verified hard subset, they gain <strong>14.80%</strong> on average; LeanEvolve adds a further <strong>7.47%</strong> through workflow refinement and reruns. This formal workflow foundation also supports our related <a href="index.html">Lean4AgenticRL</a> project, which brings verifiable process rewards to agent training.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section achievements-section" id="key-achievements" aria-labelledby="achievements-title">
+      <div class="achievements-panel">
+        <h2 class="achievements-title" id="achievements-title">Key Achievements</h2>
+        <ul class="achievements-grid">
+          <li class="achievement">
+            <p class="achievement-label">Verifying</p>
+            <p class="achievement-value">+14.80 pp</p>
+            <p class="achievement-description">SWE improvement for verification-passing over verification-failing workflows</p>
+          </li>
+          <li class="achievement">
+            <p class="achievement-label">Refining</p>
+            <p class="achievement-value">+7.47 pp</p>
+            <p class="achievement-description">additional SWE success with LeanEvolve workflow refinement and reruns</p>
+          </li>
+          <li class="achievement">
+            <p class="achievement-label">Formalizing</p>
+            <p class="achievement-value">3 layers</p>
+            <p class="achievement-description">structural, semantic, and execution-trajectory verification in one framework</p>
+          </li>
+        </ul>
+        <p class="achievements-note">pp = percentage points. SWE gains average five models on a 50-problem hard subset of SWE-Bench-Verified. LeanEvolve includes a pure-LLM refinement add-on. <a href="https://arxiv.org/html/2606.06523v2#S3.SS3" target="_blank" rel="noopener noreferrer">Source: paper, Tables 1–2.</a></p>
+      </div>
+    </section> -->
+
+    <section class="section methodology" id="methodology" aria-labelledby="methodology-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="methodology-title">Methodology</h2>
+        <figure class="method-figure">
+          <a class="figure-link" href="static/images/lean4agent/MainPlot.png" target="_blank" rel="noopener" aria-label="Open the Lean4Agent framework diagram at full size">
+            <img src="static/images/lean4agent/MainPlot.png" width="2534" height="1650" loading="lazy" decoding="async" alt="Lean4Agent combines FormalAgentLib's three layers of structural, static semantic, and execution-trajectory verification with LeanEvolve, which uses formal diagnostics and optional environment feedback to revise workflows.">
+          </a>
+          <figcaption><strong>Fig. 2.</strong> <strong>Lean4Agent</strong> combines <strong>FormalAgentLib</strong> for workflow and trajectory verification with <strong>LeanEvolve</strong> for verification-guided workflow refinement.</figcaption>
+        </figure>
+        <div class="content has-text-justified method-copy">
+          <p><strong>Structural and semantic workflow verification.</strong> FormalAgentLib represents the agent workflow as a typed graph. Static Structural Layer verifies graph connections, node reachability, and read/write consistency. Static Semantic Layer expresses each step through preconditions and postconditions using our semantic predicate system, verifying whether earlier steps's combined post-conditions can satisfies the need for the current steps. </p>
+
+          <p><strong>Execution-trajectory verification.</strong> Dynamic Verification Layer verifies what actually happened in the execution trajectory. Lean evaluates formal predicates, external validators check properties outside Lean, and semantic judges assess natural-language requirements. This combination identifies violated conditions and the steps associated with them, giving the agent concrete diagnostics about where execution departed from the intended workflow.</p>
+
+          <p><strong>Formal-guided workflow refinement.</strong> LeanEvolve uses trajectory diagnostics and optional environment feedback to revise the workflow around a failed step, then reruns the updated workflow. On SWE tasks, test results guide this process, and a pure-LLM refinement add-on provides another attempt when needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" aria-labelledby="results-title">
+      <div class="results-container">
+        <h2 class="section-title" id="results-title">Experimental Results</h2>
+        <h3 class="subsection-title" id="main-results">Main Results</h3>
+        <p class="results-intro"><strong>Verification-passing workflows outperform failing ones for every evaluated model on both evaluated tasks.</strong> On the hard 50 problems subset of SWE-Bench-Verified, the average gap is 14.80%. LeanEvolve raises cumulative SWE success by another 7.47% on average.</p>
+        <div class="table-container" role="region" aria-label="Main workflow results; scroll horizontally on small screens" tabindex="0">
+          <table class="results-table workflow-results-table" aria-describedby="table-note evaluation-note evolve-note">
+            <caption>Table 1. Task success on benchmark subsets (%), from the paper’s Tables 1–2. Higher is better.</caption>
+            <colgroup><col></colgroup>
+            <colgroup span="3"></colgroup>
+            <colgroup span="2"></colgroup>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">Model</th>
+                <th scope="colgroup" colspan="3">SWE-Bench-Verified</th>
+                <th scope="colgroup" colspan="2">ELAIP-Bench</th>
+              </tr>
+              <tr>
+                <th scope="col">Failed</th>
+                <th scope="col">Passed</th>
+                <th scope="col">+ LeanEvolve</th>
+                <th scope="col">Failed</th>
+                <th scope="col">Passed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">GPT-5.2</th><td>50.00%</td><td class="verified-score">62.67%</td><td class="evolved-score"><strong>70.67%</strong></td><td>20.33%</td><td class="verified-score">32.00%</td></tr>
+              <tr><th scope="row">GLM-5</th><td>50.67%</td><td class="verified-score">58.00%</td><td class="evolved-score"><strong>62.67%</strong></td><td>25.00%</td><td class="verified-score">37.33%</td></tr>
+              <tr><th scope="row">Kimi-K2.5</th><td>46.00%</td><td class="verified-score">61.33%</td><td class="evolved-score"><strong>70.00%</strong></td><td>28.33%</td><td class="verified-score">36.00%</td></tr>
+              <tr><th scope="row">Gemma-4-31B</th><td>32.67%</td><td class="verified-score">60.00%</td><td class="evolved-score"><strong>65.33%</strong></td><td>27.33%</td><td class="verified-score">35.67%</td></tr>
+              <tr><th scope="row">Qwen-3.5-27B</th><td>38.00%</td><td class="verified-score">49.33%</td><td class="evolved-score"><strong>60.00%</strong></td><td>36.67%</td><td class="verified-score">42.00%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note" id="table-note"><strong>Passed / Failed</strong> refer to Layer-2 semantic verification of the workflow specification, not whether an individual task was solved. Scores average three workflows in each group.</p>
+        <p class="table-note" id="evaluation-note"><strong>Evaluation.</strong> SWE uses a 50-problem hard subset of SWE-Bench-Verified; ELAIP uses a 100-question subset for AI paper understanding. These are subset evaluations, not full-benchmark leaderboard scores.</p>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="container is-max-desktop">
+        <div class="citation-heading">
+          <h2 class="title is-3" id="citation-title">BibTeX</h2>
+          <button class="button is-small is-rounded copy-button" id="copy-bibtex" type="button" hidden>Copy BibTeX</button>
+        </div>
+        <pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex">@misc{wang2026lean4agent,
+  title={Lean4Agent: Formal Modeling and Verification for Agent Workflow and Trajectory},
+  author={Ruida Wang and Jerry Huang and Pengcheng Wang and Xuanqing Liu and Luyang Kong and Tong Zhang},
+  year={2026},
+  eprint={2606.06523},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2606.06523},
+}</code></pre>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

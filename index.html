@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lean4AgenticRL grounds multi-level process rewards in Lean4 for open-ended agentic reinforcement learning. LAR-27B achieves 77.3% on TerminalBench-2.1.">
+  <meta name="keywords" content="Lean4AgenticRL, LAR, Lean4, agentic reinforcement learning, formal verification, process rewards, GRPO">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lean4AgenticRL: Advancing Agentic RL with Verifiable Multi-level Process Rewards">
+  <meta property="og:description" content="Problem-specific workflows, multi-level verifiable rewards, and workflow-stage-normalized GRPO. LAR-27B reaches 77.3% on TerminalBench-2.1.">
+  <meta property="og:url" content="https://lean4agent.github.io/">
+  <meta property="og:image" content="https://lean4agent.github.io/static/images/ResultPlot.png">
+  <meta property="og:image:alt" content="Main results of LAR-9B and LAR-27B on SWE-Bench-Verified and TerminalBench.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lean4AgenticRL">
+  <meta name="twitter:description" content="Advancing Agentic RL with Verifiable Multi-level Process Rewards.">
+  <meta name="twitter:image" content="https://lean4agent.github.io/static/images/ResultPlot.png">
+  <link rel="canonical" href="https://lean4agent.github.io/">
+  <title>Lean4AgenticRL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700%7CNoto+Sans:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#abstract">Skip to content</a>
+  <nav class="project-switcher" aria-label="Research projects">
+    <div class="project-switcher-links">
+      <a class="project-switcher-link" href="index.html" aria-current="page">Lean4AgenticRL</a>
+      <a class="project-switcher-link" href="lean4agent.html">Lean4Agent</a>
+    </div>
+  </nav>
+  <header class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">Lean4AgenticRL: Advancing Agentic RL with Verifiable Multi-level Process Rewards</h1>
+        <div class="publication-authors is-size-5">
+          <span class="author-block"><a href="https://rickyskywalker.github.io/" target="_blank" rel="noopener noreferrer">Ruida Wang</a><sup>1,2*</sup>,</span>
+          <span class="author-block"><a href="https://openreview.net/profile?id=~Gerald_Friedland1" target="_blank" rel="noopener noreferrer">Gerald Friedland</a><sup>2</sup>,</span>
+          <span class="author-block"><a href="https://www.tongzhang-ml.org/" target="_blank" rel="noopener noreferrer">Tong Zhang</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://www.amazon.science/author/chris-luyang-kong" target="_blank" rel="noopener noreferrer">Chris Kong</a><sup>2†</sup></span>
+        </div>
+        <div class="publication-affiliations is-size-5">
+          <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
+          <span class="author-block"><sup>2</sup>Amazon Web Services</span>
+        </div>
+        <p class="publication-venue">Preprint · 2026</p>
+        <p class="author-notes"><span><sup>*</sup>Work done during an internship at Amazon Web Services.</span> <span><sup>†</sup>Corresponding author.</span></p>
+        <div class="publication-links">
+          <a href="static/pdfs/paper.pdf" target="_blank" rel="noopener" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></span>
+            <span>arXiv</span>
+          </a>
+          <a href="https://github.com/RickySkywalker/Lean4AgenticRL" target="_blank" rel="noopener" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true"><svg class="icon-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            <span>Code</span>
+          </a>
+          <a href="https://huggingface.co/amazon/LAR-27B" target="_blank" rel="noopener noreferrer" class="button is-normal is-rounded is-dark">
+            <span class="icon" aria-hidden="true">🤗</span>
+            <span>Model</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero teaser" aria-label="Results overview">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <figure>
+            <a class="figure-link" href="static/images/ResultPlot.png" target="_blank" rel="noopener" aria-label="Open the main results chart at full size">
+              <img src="static/images/ResultPlot.png" width="3200" height="1800" fetchpriority="high" alt="Main benchmark results for eleven models. LAR-27B scores 84.2% on SWE-Bench-Verified, 68.2% on TerminalBench-2.0, and 77.3% on TerminalBench-2.1.">
+            </a>
+            <figcaption><strong>Fig. 1.</strong> Main results on SWE-Bench-Verified and TerminalBench. Blue bars represent comparison models; green bars represent LAR. <strong>LAR-27B achieves 77.3% on TerminalBench-2.1.</strong></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract" aria-labelledby="abstract-title">
+      <div class="container is-max-desktop">
+        <div class="prose-column">
+          <h2 class="title is-3 has-text-centered" id="abstract-title">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Long-running software engineering and terminal tasks require agents to learn from both final outcomes and intermediate actions. Yet outcome rewards alone offer limited guidance about which steps help. We introduce <strong>Lean4AgenticRL</strong>, a framework that grounds multi-level process rewards in a unified Lean4 formalization schema for open-ended agentic reinforcement learning. It first builds a <strong>problem-specific workflow</strong> through exploration and planning. It then formalizes the workflow and annotates task outcomes, workflow-stage progress, and tool-call behavior. These signals support <strong>workflow-stage-normalized GRPO</strong>, which assigns credit across comparable stages of different rollouts. We train <strong>LAR-9B and LAR-27B</strong>, which lead the compared models of similar size across three benchmarks. LAR-27B achieves <strong>84.2% on SWE-Bench-Verified</strong> and <strong>77.3% on TerminalBench-2.1</strong>, demonstrating the potential of formal methods for more effective agentic RL.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section achievements-section" id="key-achievements" aria-labelledby="achievements-title">
+      <div class="achievements-panel">
+        <h2 class="achievements-title" id="achievements-title">Key Achievements</h2>
+        <ul class="achievements-grid">
+          <li class="achievement">
+            <p class="achievement-label">Improving</p>
+            <p class="achievement-value">+7.7%</p>
+            <p class="achievement-description">relative gain on TB-2.1 over the previous 30B-class SOTA</p>
+          </li>
+          <li class="achievement">
+            <p class="achievement-label">Ranking</p>
+            <p class="achievement-value">1st</p>
+            <p class="achievement-description">on TB-2.1 among 30B-class models<sup><a href="#benchmark-reference" aria-label="See benchmark reference">[1]</a></sup></p>
+          </li>
+          <li class="achievement">
+            <p class="achievement-label">Introducing</p>
+            <p class="achievement-value">1st</p>
+            <p class="achievement-description">framework to integrate formally grounded process rewards into open-ended agentic RL</p>
+          </li>
+        </ul>
+        <p class="achievements-note" id="benchmark-reference"><sup>[1]</sup> Benchmark reference: <a href="https://www.vals.ai/benchmarks/terminal-bench-2-1" target="_blank" rel="noopener noreferrer">Vals AI · Terminal-Bench 2.1 leaderboard</a>.</p>
+      </div>
+    </section>
+
+    <section class="section methodology" id="methodology" aria-labelledby="methodology-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="methodology-title">Methodology</h2>
+        <figure class="method-figure">
+          <a class="figure-link" href="static/images/MainPlot.png" target="_blank" rel="noopener" aria-label="Open the Lean4AgenticRL framework diagram at full size">
+            <img src="static/images/MainPlot.png" width="1992" height="1555" loading="lazy" decoding="async" alt="Lean4AgenticRL has three stages: planning and executing a problem-specific workflow; formalizing the workflow and annotating outcome, workflow-stage, and tool-call rewards; training the agent with workflow-stage-normalized GRPO.">
+          </a>
+          <figcaption><strong>Fig. 2.</strong> Overview of Lean4AgenticRL: problem-specific workflows, workflow formalization and multi-level reward annotation, and agentic RL training.</figcaption>
+        </figure>
+        <div class="content has-text-justified method-copy">
+          <p><strong>Problem-specific workflows.</strong> A planning agent explores the task environment and specializes a general workflow into a <i>problem-specific workflow</i>(PSWF). An execution agent then conduct the task based on the PSWF. This plan-then-execute process balances the flexibility of open-ended agents with stage-wise guidance, while giving subsequent verification a clear structure for assessing the agent’s behavior.</p>
+          <p><strong>Workflow formalization and multi-level rewards.</strong> We transform the PSWF into a Lean4Agent workflow and align the execution trajectory with its stages. Rewards capture three levels: final task outcomes (α), workflow-stage completion (β), and tool-call penalties (γ). Stage rewards combine Lean/Python checks with semantic judges, while tool-call penalties target repetition, no-ops, and reward hacking.</p>
+          <p><strong>Workflow-stage-normalized GRPO.</strong> Different rollouts may take different numbers of steps to complete the same task. We align their workflow stages and normalize rewards within corresponding stages, instead of comparing unrelated tool calls by position. Combining these stage-aware advantages with outcome and tool-call signals provides more targeted credit assignment. Training with this objective produces LAR-9B and LAR-27B for software engineering and general terminal tasks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="container is-max-desktop">
+        <div class="citation-heading">
+          <h2 class="title is-3" id="citation-title">BibTeX</h2>
+          <button class="button is-small is-rounded copy-button" id="copy-bibtex" type="button" hidden>Copy BibTeX</button>
+        </div>
+        <pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex">@misc{wang2026lean4agenticrl,
+  title={{Lean4AgenticRL}: Advancing Agentic {RL} with Verifiable Multi-level Process Rewards},
+  author={Ruida Wang and Gerald Friedland and Tong Zhang and Chris Kong},
+  year={2026},
+  url={https://github.com/RickySkywalker/Lean4AgenticRL/blob/main/assets/paper.pdf},
+  note={Preprint},
+}</code></pre>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

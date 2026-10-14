@@ -1,0 +1,134 @@
+/* Adapted from the MA-LoT academic project page (CC BY-SA 4.0). */
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans', Arial, sans-serif; color: #4a4a4a; }
+a { color: #1674ae; }
+a:hover { color: #105581; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #1674ae;
+  outline-offset: 4px;
+}
+section[id], h3[id] { scroll-margin-top: 1.5rem; }
+.skip-link {
+  position: absolute;
+  z-index: 10;
+  top: -5rem;
+  left: 1rem;
+  padding: .75rem 1rem;
+  background: #fff;
+}
+.skip-link:focus { top: 1rem; }
+.project-switcher { padding: .85rem 1rem; border-bottom: 1px solid #e8ebef; background: #fafbfc; }
+.project-switcher-links { display: flex; gap: .25rem; width: fit-content; max-width: 100%; margin: 0 auto; padding: .25rem; border-radius: 999px; background: #eceff2; }
+.project-switcher-link { padding: .6rem 1.35rem; border-radius: 999px; color: #53606f; font-size: .875rem; font-weight: 600; white-space: nowrap; }
+.project-switcher-link:hover { color: #26313e; background: #e0e5eb; }
+.project-switcher-link[aria-current="page"] { color: #fff; background: #363636; box-shadow: 0 1px 3px rgb(0 0 0 / 12%); }
+.publication-title, .publication-authors, .publication-affiliations, .teaser {
+  font-family: 'Google Sans', 'Noto Sans', Arial, sans-serif;
+}
+.publication-title { line-height: 1.125; overflow-wrap: break-word; }
+.publication-header .hero-body { padding: 3rem 1.5rem 2rem; }
+.publication-authors { margin-top: 1.5rem; color: #1674ae; }
+.publication-authors a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.author-block { display: inline-block; }
+.publication-authors .author-block { margin: 0 .18rem; }
+.publication-authors sup, .publication-affiliations sup { margin-left: .15rem; font-size: .7em; }
+.publication-affiliations { margin-top: .5rem; }
+.publication-affiliations .author-block { margin: 0 .3rem; }
+.publication-affiliations sup { margin-right: .2rem; }
+.publication-venue { margin-top: .4rem; color: #555; font-size: 1.15rem; }
+.author-notes { margin-top: .55rem; font-size: .8rem; color: #666; }
+.author-notes span { display: inline-block; margin: 0 .15rem; }
+.publication-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; margin-top: 1.2rem; }
+.publication-links .button { padding-left: 1.25em; padding-right: 1.25em; }
+.icon svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.icon svg.icon-github { fill: currentColor; stroke: none; }
+.teaser .hero-body { padding: 0 1.5rem 3rem; }
+.figure-link { display: block; border-radius: 4px; }
+.figure-link img { display: block; width: 100%; height: auto; }
+figcaption { margin-top: .9rem; text-align: center; font-size: .9rem; line-height: 1.6; color: #626262; }
+.teaser figcaption { max-width: 860px; margin: .9rem auto 0; }
+.prose-column { max-width: 800px; margin: 0 auto; }
+.section { padding: 3rem 1.5rem; }
+.content { line-height: 1.65; }
+/* Key Achievements follows the Goedel-Prover project page. */
+.achievements-panel {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #f8f9fa;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+  text-align: center;
+}
+.achievements-title { margin-bottom: 2rem; font-size: 1.5rem; font-weight: 700; color: #1f2937; }
+.achievements-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin: 0; padding: 0; list-style: none; }
+.achievement-label { margin-bottom: .75rem; color: #626976; font-size: .875rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+.achievement-value { margin-bottom: 1rem; color: #d93939; font-size: 2.25rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.achievement-value sup { position: relative; top: -.15em; margin-left: .1em; font-size: .45em; }
+.achievement-description { max-width: 270px; margin: 0 auto; color: #626976; font-size: .875rem; line-height: 1.6; }
+.achievement-description a { text-decoration: underline; text-underline-offset: 2px; }
+.achievements-note { max-width: 800px; margin: 1.75rem auto 0; color: #626976; font-size: .75rem; line-height: 1.65; }
+.achievements-note span { white-space: nowrap; }
+.achievements-note a { text-decoration: underline; text-underline-offset: 2px; }
+.method-figure { max-width: 880px; margin: 2.5rem auto 2rem; }
+.method-copy { max-width: 900px; margin: 0 auto; }
+.method-copy p:not(:last-child) { margin-bottom: 1.25rem; }
+.results-section { padding: 4rem 2rem; background: #f8f9fa; color: #333; line-height: 1.6; }
+.results-container { max-width: 1000px; margin: 0 auto; }
+.section-title { margin-bottom: 2rem; text-align: center; color: #2c3e50; font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.subsection-title { margin: 2rem 0 1rem; color: #2c3e50; font-size: 1.5rem; font-weight: 600; }
+.results-intro { margin-bottom: 1.5rem; }
+.table-container { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgb(0 0 0 / 10%); margin-bottom: 1.25rem; }
+.results-table { width: 100%; min-width: 690px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.results-table caption { padding: .85rem 1rem; font-size: .9rem; color: #626262; background: #fff; }
+.results-table th, .results-table td { padding: 12px 15px; border-bottom: 1px solid #e1e1e1; vertical-align: middle; }
+.results-table thead th { background: #f8f9fa; color: #2c3e50; font-weight: 700; white-space: nowrap; }
+.results-table th[scope="row"] { font-weight: 400; white-space: nowrap; }
+.results-table th:first-child { text-align: left; }
+.results-table td, .results-table thead th:not(:first-child) { text-align: right; white-space: nowrap; }
+.small-models { background: #fff0f5; }
+.large-models { background: #f0f8ff; }
+.our-models { background: #f0fff0; }
+.our-models th[scope="row"] { font-weight: 700; }
+.our-models strong { color: #286e33; }
+.group-label th { background: #fff; font-size: .9rem; color: #555; }
+.results-table tbody:last-child tr:last-child > * { border-bottom: 0; }
+.results-table.workflow-results-table { min-width: 880px; }
+.results-table.workflow-results-table thead th,
+.results-table.workflow-results-table td { text-align: center; }
+.results-table.workflow-results-table thead th[rowspan] { text-align: left; }
+.workflow-results-table thead th[scope="colgroup"] { border-bottom: 1px solid #d7dde3; }
+.workflow-results-table tbody tr:nth-child(even) { background: #f8fafc; }
+.workflow-results-table .verified-score { background: #f0f8f1; }
+.workflow-results-table .evolved-score { background: #e4f3e5; color: #286e33; font-weight: 700; }
+.results-table u, .table-note u { text-underline-offset: 3px; }
+.table-note { font-size: .875rem; color: #5b5b5b; }
+.table-note + .table-note { margin-top: .5rem; }
+.citation-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.citation-heading .title { margin-bottom: 0; }
+.copy-button { flex-shrink: 0; }
+[hidden] { display: none !important; }
+.citation-section pre { overflow-x: auto; border-radius: 5px; font-size: .875rem; line-height: 1.6; tab-size: 2; }
+.copy-status { min-height: 1.5em; margin-top: .5rem; font-size: .85rem; color: #555; }
+.footer { padding: 3rem 1.5rem; background: #fafafa; font-size: .9rem; }
+@media screen and (max-width: 768px) {
+  .publication-header .hero-body { padding-top: 2.5rem; }
+  .publication-title.title.is-1 { font-size: 2rem; line-height: 1.18; }
+  .publication-authors.is-size-5, .publication-affiliations.is-size-5 { font-size: 1.05rem !important; }
+  .publication-authors { line-height: 1.8; }
+  .publication-affiliations .author-block { display: block; margin-top: .2rem; }
+  .author-notes { max-width: 32rem; margin: .65rem auto 0; }
+  .section, .results-section { padding: 2.5rem 1.25rem; }
+  .teaser .hero-body { padding: 0 1rem 2.5rem; }
+  .has-text-justified { text-align: left !important; }
+  .method-figure { margin: 1.5rem auto; }
+  .results-table th, .results-table td { padding: 10px 12px; font-size: .9rem; }
+  .results-table { min-width: 665px; }
+}
+@media screen and (max-width: 640px) {
+  .project-switcher-link { padding: .55rem 1rem; }
+  .achievements-panel { padding: 1.75rem 1.25rem; }
+  .achievements-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .achievement + .achievement { padding-top: 1.75rem; border-top: 1px solid #e1e4e8; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
