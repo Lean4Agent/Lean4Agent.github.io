@@ -18,12 +18,13 @@ Open [localhost:8000](http://localhost:8000) or [the Lean4Agent page](http://loc
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Default Lean4AgenticRL page: metadata, authors, results teaser, achievements, methodology, and citation |
+| `index.html` | Default Lean4AgenticRL page: metadata, authors, teaser video, main results chart, achievements, methodology, and citation |
 | `lean4agent.html` | Lean4Agent page: metadata, authors, narrative, main results, and citation |
 | `static/css/index.css` | Shared page styling, project navigation, and mobile layouts |
 | `static/css/bulma.min.css` | Local Bulma 0.9.1 base styles |
 | `static/js/index.js` | Shared Copy BibTeX button with a selection fallback |
-| `static/images/ResultPlot.png` | Lean4AgenticRL results teaser and social preview |
+| `static/videos/Lean4AgenticRL-video.mp4` | Lean4AgenticRL teaser video, shown below the resource links with native playback controls |
+| `static/images/ResultPlot.png` | Lean4AgenticRL main results chart and social preview |
 | `static/images/MainPlot.png` | Lean4AgenticRL framework diagram from the research repository |
 | `static/pdfs/paper.pdf` | Locally served Lean4AgenticRL paper |
 | `static/images/lean4agent/MainPlot.png` | Lean4Agent framework diagram from its source repository |
@@ -36,7 +37,7 @@ Edit the HTML and CSS directly, preview locally, then inspect desktop and mobile
 
 ## Structure and narrative
 
-MA-LoT uses a hand-edited HTML/CSS workflow with `.nojekyll`, rather than a build pipeline. The pages retain the centered title and resource buttons, result teaser, gray abstract band, illustrated methodology, and citation. A Goedel-Prover-style **Key Achievements** panel follows the abstract, with three metrics arranged horizontally on desktop and stacked on mobile. Unused template carousels and video dependencies are omitted. Lean4AgenticRL shows its results teaser and Key Achievements without a separate Experimental Results section. Lean4Agent retains its **Main Results** table.
+MA-LoT uses a hand-edited HTML/CSS workflow with `.nojekyll`, rather than a build pipeline. The pages retain the centered title and resource buttons, result figures, gray abstract band, illustrated methodology, and citation. A Goedel-Prover-style **Key Achievements** panel follows the abstract, with three metrics arranged horizontally on desktop and stacked on mobile. Unused template carousels and video dependencies are omitted. Lean4AgenticRL shows a responsive teaser video with native controls and inline mobile playback, followed by its main results chart. The video preloads only metadata and starts when the visitor presses play. Lean4AgenticRL includes Key Achievements without a separate Experimental Results section. Lean4Agent retains its **Main Results** table.
 
 The narrative is: problem-specific workflows establish a plan; Lean4-based workflow formalization supports outcome, workflow-stage, and tool-call rewards; workflow-stage-normalized GRPO turns these signals into training for LAR-9B/27B. The abstract is approximately 127 words versus MA-LoT’s 178; methodology paragraphs are 57–64 words versus 57–159, keeping the text compact.
 
